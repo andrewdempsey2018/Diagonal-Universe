@@ -5,4 +5,5 @@ from django.http import HttpResponse
 from .models import Post
 
 def index(request):
-    return render(request, "index.html")
+    latestPost = Post.objects.latest('id')
+    return render(request, "index.html", {'latestPost': latestPost})
