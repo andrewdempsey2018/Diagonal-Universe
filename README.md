@@ -8,6 +8,10 @@
 
 *Image 1. Mockup of the main page (desktop)*
 
+![final version mockup](wireframes/mockup1.png)
+
+*Image 2. Final version mockup of the main page (desktop)*
+
 ### Technologies used
 
 Pillow
