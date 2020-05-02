@@ -17,3 +17,18 @@
 Pillow
 
 # [Start Bootstrap - Blog Post](https://startbootstrap.com/template-overviews/blog-post/)
+
+*** Shortcuts DELETE ***
+
+env\scripts\activate
+
+python manage.py runserver
+
+python manage.py startapp appname
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py createsuperuser
+***

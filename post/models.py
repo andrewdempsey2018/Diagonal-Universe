@@ -10,3 +10,6 @@ class Post(models.Model):
     topPicphoto = models.ImageField(upload_to="images")
     middlePicphoto = models.ImageField(upload_to="images")
     middlePicDescription = models.CharField(max_length=300)
+    youtube = models.CharField(max_length=100, default="No video for this post")
+    github = models.CharField(max_length=100, default="No repo for this post")
+
