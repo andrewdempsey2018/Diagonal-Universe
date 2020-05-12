@@ -8,10 +8,10 @@ class Post(models.Model):
     text = models.TextField(max_length=3000)
     # comments
     topPicphoto = models.CharField(max_length=100)
-    topPicphotoAlt = models.CharField(max_length=100)
+    topPicphotoDescription = models.CharField(max_length=100, default="Description of picture")
+
     middlePicphoto = models.CharField(max_length=100)
-    middlePicphotoAlt = models.CharField(max_length=100)
-    middlePicDescription = models.CharField(max_length=300)
+    middlePicphotoDescription = models.CharField(max_length=300, default="Description of picture")
+
     youtube = models.CharField(max_length=100, default="No video for this post")
     github = models.CharField(max_length=100, default="No repo for this post")
-
