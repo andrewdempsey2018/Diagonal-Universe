@@ -20,60 +20,63 @@
             <hr>
 
             <!-- Preview Image -->
-            <img class="img-fluid rounded" src="{{ latestPost.topPicphoto }}" alt="">
-
-            <hr>
+            <img class="img-fluid rounded" src="{{ latestPost.topImage }}" alt="">
 
             <!-- Post Content -->
             <p class="lead">{{ latestPost.subtitle }}</p>
 
-            <p>{{ latestPost.text | linebreaks }}</p>
+            <p>{{ latestPost.text1 | linebreaks }}</p>
 
-            <img class="img-fluid rounded" src="{{ latestPost.middlePicphoto }}" alt="">
+            <img class="img-fluid rounded" src="{{ latestPost.middleImage }}" alt="">
 
-            <p class="text-muted">{{ latestPost.middlePicDescription }}</p>
+            <p class="text-muted">{{ latestPost.middleImageDescription }}</p>
+
+            {% if latestPost.text2 != "No text" %}
+            <p>{{ latestPost.text2 | linebreaks }}</p>
+            {% endif %}
 
             <hr>
 
-            <h3>Additional images</h3>
-            <div>
-                <div class="row">
-                    <div class="col">
-                        <img src="https://imgur.com/6qes3cv.jpg" class="img-fluid rounded" alt="">
-                    </div>
-                    <div class="col">
-                        <img src="https://imgur.com/6qes3cv.jpg" class="img-fluid rounded" alt="">
-                    </div>
-                    <div class="col">
-                        <img src="https://imgur.com/6qes3cv.jpg" class="img-fluid rounded" alt="">
-                    </div>
-                </div>
+            <div title="Addition images section">
 
-                <div class="row">
-                    <div class="col">
-                        <p>Image 3 description</p>
-                    </div>
-                    <div class="col">
-                        <p>Image 4 description</p>
-                    </div>
-                    <div class="col">
-                        <p>Image 5 description</p>
-                    </div>
+                <!-- <h3>Additional images</h3> -->
+
+                <img class="img-fluid rounded" src="{{ latestPost.extraImage1 }}" alt="">
+                <p class="text-muted">{{ latestPost.extraImage1Description }}</p>
+
+                <hr>
+
+                <img class="img-fluid rounded" src="{{ latestPost.extraImage2 }}" alt="">
+                <p class="text-muted">{{ latestPost.extraImage2Description }}</p>
+
+                <hr>
+
+                <img class="img-fluid rounded" src="{{ latestPost.extraImage3 }}" alt="">
+                <p class="text-muted">{{ latestPost.extraImage3Description }}</p>
+
+                <hr>
+            </div>
+
+            {% if latestPost.video != 'na' %}
+            <div title="Video section">
+
+                <!--  <h3>Video demonstration</h3> -->
+                <div class="d-flex justify-content-center">
+                    <iframe width="480" height="320"
+                        src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+                    </iframe>
                 </div>
             </div>
-            <hr>
-
-            <h3>Links</h3>
-
-            <h2>Youtube video demonstration</h2>
-
-            {% if latestPost.youtube != 'na' %}
-            <!-- <a href="{{ latestPost.youtube }}">asdf</a> -->
-            <iframe width="420" height="315"
-                src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
-            </iframe>
 
             {% endif %}
+
+            <div title="References section">
+                <h3>References</h3>
+            </div>
+
+            <div title="Links section">
+                <h3>Links</h3>
+            </div>
 
             {% endblock %}
 
