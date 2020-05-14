@@ -23,7 +23,9 @@
             <img class="img-fluid rounded" src="{{ latestPost.topImage }}" alt="">
 
             <!-- Post Content -->
-            <p class="lead">{{ latestPost.subtitle }}</p>
+            <div class="subtitle">
+                <p class="lead">{{ latestPost.subtitle }}</p>
+            </div>
 
             <p>{{ latestPost.text1 | linebreaks }}</p>
 
@@ -62,8 +64,7 @@
 
                 <!--  <h3>Video demonstration</h3> -->
                 <div class="d-flex justify-content-center">
-                    <iframe width="480" height="320"
-                        src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+                    <iframe width="480" height="320" src="{{ latestPost.video }}">
                     </iframe>
                 </div>
             </div>
@@ -72,10 +73,11 @@
 
             <div title="References section">
                 <h3>References</h3>
-            </div>
 
-            <div title="Links section">
-                <h3>Links</h3>
+                {% if latestPost.references != "none" %}
+                <p>{{ latestPost.references | safe | linebreaks }}</p>
+                {% endif %}
+
             </div>
 
             {% endblock %}

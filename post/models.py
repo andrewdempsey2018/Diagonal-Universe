@@ -28,4 +28,6 @@ class Post(models.Model):
     video = models.CharField(max_length=100, default="No video for this post")
     repo = models.CharField(max_length=100, default="No repo for this post")
 
+    references = models.TextField(max_length=1000, default="none")
+
     # User comments to be coded
