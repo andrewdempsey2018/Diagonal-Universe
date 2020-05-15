@@ -125,44 +125,24 @@
       <h5 class="card-header">Find a blog post...</h5>
       <div class="card-body">
         <div class="row">
+          <!-- iterate over the categorys, put the odd numberd ones
+          into the left column and the evens to the right -->
           <div class="col-lg-6">
             <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#">Newest-Oldest</a>
-              </li>
-              <li>
-                <a href="#">Tech</a>
-              </li>
-              <li>
-                <a href="#">Gaming</a>
-              </li>
-              <li>
-                <a href="#">Computing</a>
-              </li>
-              <li>
-                <a href="#">Culture</a>
-              </li>
-
-
+              {% for i, category in categorys %}
+              <p>{% if not forloop.counter|divisibleby:2 %}</p>
+              <li><a href="#">{{ category }}</a></li>
+              {% endif %}
+              {% endfor %}
             </ul>
           </div>
           <div class="col-lg-6">
             <ul class="list-unstyled mb-0">
-              <li>
-                <a href="#">Oldest-Newest</a>
-              </li>
-              <li>
-                <a href="#">Politics</a>
-              </li>
-              <li>
-                <a href="#">Philosophy</a>
-              </li>
-              <li>
-                <a href="#">CoderDojo</a>
-              </li>
-              <li>
-                <a href="#">Tutorials</a>
-              </li>
+              {% for i, category in categorys %}
+              <p>{% if forloop.counter|divisibleby:2 %}</p>
+              <li><a href="#">{{ category }}</a></li>
+              {% endif %}
+              {% endfor %}
             </ul>
           </div>
         </div>
