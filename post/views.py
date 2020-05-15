@@ -6,4 +6,5 @@ from .models import Post
 
 def index(request):
     latestPost = Post.objects.latest('id')
-    return render(request, "index.html", {'latestPost': latestPost})
+    smeg = Post.CATEGORYS
+    return render(request, "index.html", {'latestPost': latestPost, 'smeg': smeg})
