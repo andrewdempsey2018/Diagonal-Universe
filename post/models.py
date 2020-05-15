@@ -1,9 +1,27 @@
 from django.db import models
 
+TECH='Tech'
+GAMING='Gaming'
+COMPUTING='Computing'
+POLITICS='Politics'
+PHILOSOPHY='Philosophy'
+CODERDOJO='CoderDojo'
+CULTURE='Culture'
+
+CATEGORYS = (
+        (TECH, 'Tech'),
+        (GAMING, 'Gaming'),
+        (COMPUTING, 'Computing'),
+        (POLITICS, 'Politics'),
+        (PHILOSOPHY, 'Philosophy'),
+        (CODERDOJO, 'CoderDojo'),
+        (CULTURE, 'Culture'),
+    )
+
 class Post(models.Model):
     title = models.CharField(max_length=100)
     subtitle = models.TextField(max_length=300)
-    category = models.CharField(max_length=20)
+    category = models.CharField(max_length=20, choices=CATEGORYS, default=TECH)
     date = models.DateField()
     
     topImage = models.CharField(max_length=100)
