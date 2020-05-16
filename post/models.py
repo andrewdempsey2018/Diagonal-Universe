@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime import datetime
 
 
 class Post(models.Model):
@@ -27,16 +27,16 @@ class Post(models.Model):
     )
 
     title = models.CharField(max_length=100)
-    subtitle = models.TextField(max_length=300)
+    subtitle = models.TextField(max_length=300, default="No subtitle")
     category = models.CharField(max_length=20, choices=CATEGORYS, default=TECH)
-    date = models.DateField()
+    date = models.DateField(default=datetime.now)
     
-    topImage = models.CharField(max_length=100)
+    topImage = models.CharField(max_length=100, default="No image")
     topImageDescription = models.CharField(max_length=100, default="Description of picture")
 
     text1 = models.TextField(max_length=3000, default="No text")
 
-    middleImage = models.CharField(max_length=100)
+    middleImage = models.CharField(max_length=100, default="No image")
     middleImageDescription = models.CharField(max_length=300, default="Description of picture")
 
     text2 = models.TextField(max_length=3000, default="No text")
@@ -53,6 +53,6 @@ class Post(models.Model):
     video = models.CharField(max_length=100, default="No video for this post")
     repo = models.CharField(max_length=100, default="No repo for this post")
 
-    references = models.TextField(max_length=1000, default="none")
+    references = models.TextField(max_length=1000, default="No references")
 
     # User comments to be coded

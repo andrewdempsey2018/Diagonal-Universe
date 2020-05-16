@@ -23,15 +23,19 @@
             <img class="img-fluid rounded" src="{{ latestPost.topImage }}" alt="">
 
             <!-- Post Content -->
+            {% if latestPost.subtitle != "No subtitle" %}
             <div class="subtitle">
                 <p class="lead">{{ latestPost.subtitle }}</p>
             </div>
+            {% endif %}
 
             <p>{{ latestPost.text1 | linebreaks }}</p>
 
+            {% if latestPost.middleImage != "No image" %}
             <img class="img-fluid rounded" src="{{ latestPost.middleImage }}" alt="">
 
             <p class="text-muted">{{ latestPost.middleImageDescription }}</p>
+            {% endif %}
 
             {% if latestPost.text2 != "No text" %}
             <p>{{ latestPost.text2 | linebreaks }}</p>
@@ -43,23 +47,31 @@
 
                 <!-- <h3>Additional images</h3> -->
 
-                <img class="img-fluid rounded" src="{{ latestPost.extraImage1 }}" alt="">
+                {% if latestPost.extraImage1 != "No image" %}
+                <img class="img-fluid rounded" src="{{ latestPost.extraImage1 }}"
+                    alt="{{ latestPost.extraImage1Description }}">
                 <p class="text-muted">{{ latestPost.extraImage1Description }}</p>
-
                 <hr>
+                {% endif %}
 
-                <img class="img-fluid rounded" src="{{ latestPost.extraImage2 }}" alt="">
+                {% if latestPost.extraImage2 != "No image" %}
+                <img class="img-fluid rounded" src="{{ latestPost.extraImage2 }}"
+                    alt="{{ latestPost.extraImage2Description }}">
                 <p class="text-muted">{{ latestPost.extraImage2Description }}</p>
 
                 <hr>
+                {% endif %}
 
-                <img class="img-fluid rounded" src="{{ latestPost.extraImage3 }}" alt="">
+                {% if latestPost.extraImage3 != "No image" %}
+                <img class="img-fluid rounded" src="{{ latestPost.extraImage3 }}"
+                    alt="{{ latestPost.extraImage3Description }}">
                 <p class="text-muted">{{ latestPost.extraImage3Description }}</p>
 
                 <hr>
+                {% endif %}
             </div>
 
-            {% if latestPost.video != 'na' %}
+            {% if latestPost.video != 'No video for this post' %}
             <div title="Video section">
 
                 <!--  <h3>Video demonstration</h3> -->
@@ -73,14 +85,15 @@
 
             <hr>
 
+            {% if latestPost.references != 'No references' %}
             <div class="references_section">
                 <h3>References</h3>
 
-                {% if latestPost.references != "none" %}
                 <p>{{ latestPost.references | safe | linebreaks }}</p>
-                {% endif %}
+
 
             </div>
+            {% endif %}
 
             {% endblock %}
 
