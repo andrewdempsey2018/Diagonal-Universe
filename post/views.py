@@ -7,4 +7,4 @@ from .models import Post
 def index(request):
     latestPost = Post.objects.latest('id')
     categorys = Post.CATEGORYS
-    return render(request, "index.html", {'latestPost': latestPost, 'categorys': categorys})
+    return render(request, "post/index.html", {'latestPost': latestPost, 'categorys': categorys})
