@@ -11,4 +11,5 @@ urlpatterns = [
     path("", include("post.urls")),
     path("projects", include("projects.urls")),
     path("about", views.about, name="about"),
+    path("contact", include("ContactForm.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
