@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'post',
     'projects',
     'ContactForm',
+    'Comment',
 ]
 
 MIDDLEWARE = [
