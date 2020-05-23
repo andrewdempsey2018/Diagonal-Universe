@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'projects',
     'ContactForm',
     'Comment',
+    #bootstrapform helps with rendering forms
+    'bootstrapform',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+<!-- use bootstrapform for rendering the comment form -->
+{% load bootstrap %}
+
 {% block post %}
 <!-- Page Content -->
 <div class="container">
@@ -104,7 +107,9 @@
                 <div class="card-body">
                     <form action="" method="POST">
                         {% csrf_token %}
-                        {{ form }}
+                        <div class="form-group">
+                            {{form|bootstrap}}
+                        </div>
                         <button type="submit" class="btn btn-primary" value="Comment">Submit</button>
                     </form>
                 </div>
