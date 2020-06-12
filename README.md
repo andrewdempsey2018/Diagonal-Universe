@@ -17,3 +17,5 @@
 Pillow
 
 # [Start Bootstrap - Blog Post](https://startbootstrap.com/template-overviews/blog-post/)
+
+Whitenoise
