@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import datetime
 
-
 class Post(models.Model):
 
     TECH = 'Tech'
