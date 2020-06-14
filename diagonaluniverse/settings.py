@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu
 #if the value of the DJANGO_DEBUG environment variable is set to False.
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['diagonaluniverse.herokuapp.com', 'localhost']
 
 
 # Application definition
