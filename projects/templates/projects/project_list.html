@@ -1,14 +1,33 @@
 {% extends 'base.html' %}
 
-<h1>sdfsdffs</h1>
-
 {% block project_list %}
 <div class="container">
-    <ul>
-        {% for project in projects %}
-        <li>{{project.projectName}}</li>
-        {% endfor %}
-    </ul>
+    <!-- Page Heading -->
+    <h1 class="my-4">A selection of my projects
+        <!-- <small>Secondary Text</small> -->
+    </h1>
+
+    <!-- cycle through each project in the database -->
+
+    {% for project in projects %}
+    <!-- Project One -->
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="{{ project.pic1 }}" alt="">
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3>{{ project.projectName }}</h3>
+            <p>{{ project.shortDescription }}</p>
+            <a class="btn btn-primary" href="#">More Details</a>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+    {% endfor %}
+
 </div>
 
 {% block sidebar %}
