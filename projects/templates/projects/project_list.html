@@ -20,7 +20,7 @@
         <div class="col-md-5">
             <h3>{{ project.projectName }}</h3>
             <p>{{ project.shortDescription }}</p>
-            <a class="btn btn-primary" href="#">More Details</a>
+            <a class="btn btn-primary" href="{% url 'project_detail' slug=project.slug %}">More Details</a>
         </div>
     </div>
     <!-- /.row -->
