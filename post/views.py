@@ -23,3 +23,7 @@ def index(request):
 
 def thanks(request):
     return render(request, "post/thanks.html")
+
+def post_list(request, cat):
+    postList = Post.objects.filter(category = cat)
+    return render(request, "post/post_list.html", {'postList': postList})
