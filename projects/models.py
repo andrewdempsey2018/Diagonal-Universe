@@ -3,6 +3,7 @@ from datetime import datetime
 
 class Project(models.Model):
     projectName = models.CharField(max_length=100, default="No title")
+    slug = models.SlugField(max_length=100, default="None")
     shortDescription = models.TextField(max_length=300, default="No short description")
     longDescription = models.TextField(max_length=300, default="No short description")
     date = models.DateField(default=datetime.now)

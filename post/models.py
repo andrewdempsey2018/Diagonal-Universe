@@ -26,6 +26,7 @@ class Post(models.Model):
     )
 
     title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, default="None")
     subtitle = models.TextField(max_length=300, default="No subtitle")
     category = models.CharField(max_length=20, choices=CATEGORYS, default=TECH)
     date = models.DateField(default=datetime.now)
