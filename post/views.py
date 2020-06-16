@@ -27,3 +27,7 @@ def thanks(request):
 def post_list(request, cat):
     postList = Post.objects.filter(category = cat)
     return render(request, "post/post_list.html", {'postList': postList})
+
+def old_post(request, slug):
+    postToView = Post.objects.get(slug=slug)
+    return render(request, "post/old_post.html", {'postToView': postToView})

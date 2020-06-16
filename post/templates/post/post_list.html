@@ -11,7 +11,8 @@
     <h1>post list</h1>
     <ul>
         {% for post in postList%}
-        <li>{{ post.title }}</li>
+        <li><a href="{% url 'old_post' slug=post.slug %}">{{ post.title }}</a></li>
+        
         {% endfor %}
     </ul>
 </body>
