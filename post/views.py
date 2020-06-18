@@ -5,7 +5,6 @@ from .models import Post
 from Comment.models import Comment
 from Comment.forms import CommentForm
 
-
 def index(request):
     latestPost = Post.objects.latest('id')
     categorys = Post.CATEGORYS

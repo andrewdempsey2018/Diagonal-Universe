@@ -1,20 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block post_list %}
+<div class="container">
+    <!-- Page Heading -->
+    <h1 class="my-4">Older posts...
+        <!-- <small>Secondary Text</small> -->
+    </h1>
 
-<body>
-    <h1>post list</h1>
-    <ul>
-        {% for post in postList%}
-        <li><a href="{% url 'old_post' slug=post.slug %}">{{ post.title }}</a></li>
-        
-        {% endfor %}
-    </ul>
-</body>
+    
+    {% for post in postList %}
+    <!-- Project One -->
+    <div class="row">
+        <div class="col-md-7">
+            <a href="#">
+                <img class="img-fluid rounded mb-3 mb-md-0" src="{{ post.topImage }}" alt="">
+            </a>
+        </div>
+        <div class="col-md-5">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.subtitle }}</p>
+            <a class="btn btn-primary" href="{% url 'old_post' slug=post.slug %}">Read</a>
+        </div>
+    </div>
+    <!-- /.row -->
 
-</html>
+    <hr>
+    {% endfor %}
+
+</div>
+
+{% block sidebar %}
+{% endblock %}
+
+{% endblock %}
