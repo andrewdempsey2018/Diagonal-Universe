@@ -4,25 +4,13 @@ from datetime import datetime
 class Post(models.Model):
 
     TECH = 'Tech'
-    GAMING = 'Gaming'
-    COMPUTING = 'Computing'
-    POLITICS = 'Politics'
-    PHILOSOPHY = 'Philosophy'
-    CODERDOJO = 'CoderDojo'
-    CULTURE = 'Culture'
     TUTORIALS = 'Tutorials'
-    SCIENCE = 'Science'
+    PROJECTS = 'Projects'
 
     CATEGORYS = (
         (TECH, 'Tech'),
-        (GAMING, 'Gaming'),
-        (COMPUTING, 'Computing'),
-        (POLITICS, 'Politics'),
-        (PHILOSOPHY, 'Philosophy'),
-        (CODERDOJO, 'CoderDojo'),
-        (CULTURE, 'Culture'),
         (TUTORIALS, 'Tutorials'),
-        (SCIENCE, 'Science'),
+        (PROJECTS, 'Projects'),
     )
 
     title = models.CharField(max_length=100)

@@ -8,7 +8,20 @@ from Comment.forms import CommentForm
 def index(request):
     latestPost = Post.objects.latest('id')
     categorys = Post.CATEGORYS
-    comments = Comment.objects.all()
+
+    #remove 'projects' from categorys as we dont want this listed on main page
+    new = list(categorys)
+    new.remove(('Projects', 'Projects'))
+    print("!")
+    categorys = tuple(new)
+    print(new)
+    
+    #comments = Comment.objects.all()
+    #comments = Comment.objects.all().filter(subject='diy-rxtx')
+    comments = Comment.objects.all().filter(subject=latestPost.slug)
+    print("!")
+    print(comments)
+
     form = CommentForm()
 
     if request.method == 'POST':
@@ -16,6 +29,7 @@ def index(request):
         comment = Comment()
         comment.name = request.POST.get('name')
         comment.text = request.POST.get('text')
+        comment.subject = latestPost.slug
         comment.save()
         return render(request, 'post/thanks.html')  
     else:
