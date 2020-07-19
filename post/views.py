@@ -16,11 +16,8 @@ def index(request):
     categorys = tuple(new)
     print(new)
     
-    #comments = Comment.objects.all()
-    #comments = Comment.objects.all().filter(subject='diy-rxtx')
+    #get comments unique to the latest post
     comments = Comment.objects.all().filter(subject=latestPost.slug)
-    print("!")
-    print(comments)
 
     form = CommentForm()
 
@@ -42,6 +39,35 @@ def post_list(request, cat):
     postList = Post.objects.filter(category = cat)
     return render(request, "post/post_list.html", {'postList': postList})
 
+#def old_post(request, slug):
+#    postToView = Post.objects.get(slug=slug)
+#    return render(request, "post/old_post.html", {'postToView': postToView})
+
 def old_post(request, slug):
-    postToView = Post.objects.get(slug=slug)
-    return render(request, "post/old_post.html", {'postToView': postToView})
+    #messy code here (entire view should be refactored)
+    #old_post view and index view should be the same function
+    latestPost = Post.objects.get(slug=slug)
+    categorys = Post.CATEGORYS
+
+    #remove 'projects' from categorys as we dont want this listed on main page
+    new = list(categorys)
+    new.remove(('Projects', 'Projects'))
+    print("!")
+    categorys = tuple(new)
+    print(new)
+    
+    #get comments unique to the latest post
+    comments = Comment.objects.all().filter(subject=latestPost.slug)
+
+    form = CommentForm()
+
+    if request.method == 'POST':
+        #if form.is_valid():
+        comment = Comment()
+        comment.name = request.POST.get('name')
+        comment.text = request.POST.get('text')
+        comment.subject = latestPost.slug
+        comment.save()
+        return render(request, 'post/thanks.html')  
+    else:
+        return render(request, "post/index.html", {'latestPost': latestPost, 'categorys': categorys, 'comments': comments, 'form': form})
