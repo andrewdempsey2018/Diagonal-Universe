@@ -39,7 +39,7 @@ def post_list(request, cat):
     postList = Post.objects.filter(category = cat)
     return render(request, "post/post_list.html", {'postList': postList})
 
-def project_list2(request):
+def project_list(request):
     postList = Post.objects.filter(category = 'Projects')
     return render(request, "post/post_list.html", {'postList': postList})
 

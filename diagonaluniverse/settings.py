@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'post',
-    'projects',
     'ContactForm',
     'Comment',
     #bootstrapform helps with rendering forms
