@@ -1,19 +1,12 @@
 <?xml version="1.0"?>
 <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
  <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
-
  <g class="layer">
   <title>Layer 1</title>
-  <g id="svg_13">
-   <rect fill="#00ff00" height="159" id="svg_4" stroke="#7fff00" stroke-width="4" transform="matrix(2.11569, 0.56841, -1.34635, 0.893216, 390.059, -121.948)" width="45" x="165.72521" y="375.272128"/>
-   <rect fill="#00ff00" height="159" id="svg_5" stroke="#7fff00" stroke-width="4" transform="matrix(2.07686, -0.593383, 1.4055, 0.876824, -523.848, 155.062)" width="45" x="145.762075" y="168.018986"/>
-   <rect fill="#00ff00" height="159" id="svg_6" stroke="#7fff00" stroke-width="4" transform="matrix(2.11569, 0.56841, -1.34635, 0.893215, 79.6396, -157.645)" width="45" x="161.725216" y="145.872135"/>
-   <g id="svg_10">
-    <rect fill="#00ff00" height="159" id="svg_9" stroke="#7fff00" stroke-width="4" transform="matrix(-2.03775, 0.56841, 1.29675, 0.893215, 1071.99, -168.561)" width="45" x="471.426773" y="229.720069"/>
-    <rect fill="#00ff00" height="159" id="svg_8" stroke="#7fff00" stroke-width="4" transform="matrix(-2.00036, -0.593382, -1.35372, 0.876824, 1847.01, 189.996)" width="45" x="408.002357" y="302.386157"/>
-    <rect fill="#00ff00" height="159" id="svg_7" stroke="#7fff00" stroke-width="4" transform="matrix(-2.03775, 0.56841, 1.29675, 0.893215, 1370.97, -204.258)" width="45" x="467.426773" y="0.320076"/>
-   </g>
-   <ellipse cx="320.199658" cy="37.10343" fill="#ffd400" id="svg_11" rx="75.232298" ry="30.70337" stroke="#ffd400" stroke-width="4"/>
-  </g>
+  <rect fill="#56ffaa" height="364" id="svg_1" opacity="0.7" stroke="#0000ff" stroke-width="5" transform="rotate(25 121.5 189.5)" width="90" x="76.5" y="7.5"/>
+  <rect fill="#56ffaa" height="364" id="svg_2" opacity="0.7" stroke="#0000ff" stroke-width="5" transform="rotate(-25 121.5 291.5)" width="90" x="76.5" y="109.5"/>
+  <rect fill="#56ffaa" height="364" id="svg_3" opacity="0.7" stroke="#0000ff" stroke-width="5" transform="rotate(24.3159 281.5 290.5)" width="90" x="236.5" y="108.5"/>
+  <rect fill="#56ffaa" height="364" id="svg_4" opacity="0.7" stroke="#0000ff" stroke-width="5" transform="rotate(-25 403.5 186.5)" width="90" x="358.5" y="4.5"/>
+  <rect fill="#56ffff" height="364" id="svg_5" opacity="0.7" stroke="#0000ff" stroke-width="5" transform="rotate(24.3159 521.5 225.5)" width="90" x="476.5" y="43.5"/>
  </g>
 </svg>

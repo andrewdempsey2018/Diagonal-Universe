@@ -86,11 +86,19 @@
             <hr>
             {% endif %}
 
+            {% if latestPost.repo != 'No repo for this post' %}
+            <div title="Repo section">
+                <h3>Project repo</h3>
+                <a href="{{ latestPost.repo }}">View the GitHub repo for "{{ latestPost.title }}"</a>
+            </div>
+            <hr>
+            {% endif %}
+
 
 
             {% if latestPost.references != 'No references' %}
             <div class="references_section">
-                <h3>References</h3>
+                <h3>Further reading</h3>
 
                 <p>{{ latestPost.references | safe | linebreaks }}</p>
 
