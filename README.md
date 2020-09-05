@@ -19,3 +19,9 @@ Pillow
 # [Start Bootstrap - Blog Post](https://startbootstrap.com/template-overviews/blog-post/)
 
 Whitenoise
+
+# [Whitenoise](http://whitenoise.evans.io/en/stable/)
+
+django-embed-video
+
+# [Django embed video](https://django-embed-video.readthedocs.io/en/latest/index.html)

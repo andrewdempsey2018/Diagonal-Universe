@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 
+<!-- Required for django-embed-video -->
+{% load embed_video_tags %}
+
 <!-- use bootstrapform for rendering the comment form -->
 {% load bootstrap %}
 
@@ -76,12 +79,8 @@
 
             {% if latestPost.video != 'No video for this post' %}
             <div title="Video section">
-
-                <!--  <h3>Video demonstration</h3> -->
-                <div class="d-flex justify-content-center">
-                    <iframe width="480" height="320" src="{{ latestPost.video }}">
-                    </iframe>
-                </div>
+                <h3>Video demonstration</h3>
+                {% video latestPost.video 'small' %}
             </div>
             <hr>
             {% endif %}

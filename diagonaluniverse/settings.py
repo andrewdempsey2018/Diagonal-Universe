@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'Comment',
     #bootstrapform helps with rendering forms
     'bootstrapform',
+    'embed_video',
 ]
 
 MIDDLEWARE = [
