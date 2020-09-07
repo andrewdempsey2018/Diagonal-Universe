@@ -8,6 +8,7 @@ class Post(models.Model):
     PROJECTS = 'Projects'
     COMPUTING = 'Computing'
     CULTURE = 'Culture'
+    THOUGHTS = 'Thoughts'
 
     CATEGORYS = (
         (TECH, 'Tech'),
@@ -15,6 +16,7 @@ class Post(models.Model):
         (PROJECTS, 'Projects'),
         (COMPUTING, 'Computing'),
         (CULTURE, 'Culture'),
+        (THOUGHTS, 'Thoughts'),
     )
 
     title = models.CharField(max_length=100)
