@@ -25,3 +25,9 @@ Whitenoise
 django-embed-video
 
 # [Django embed video](https://django-embed-video.readthedocs.io/en/latest/index.html)
+
+Russo One font
+
+by Jovanny Lemonad
+
+# [Russo One](https://fonts.google.com/specimen/Russo+One)
