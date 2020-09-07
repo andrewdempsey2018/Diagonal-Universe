@@ -50,16 +50,16 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <li class="nav-item active">
+          <li class="nav-item {% ifequal request.path '/' %} active {% endifequal %}">
             <a class="nav-link" href="{% url 'index' %}">Blog
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item {% ifequal request.path '/project_list/' %} active {% endifequal %}">
             <a class="nav-link" href="{% url 'project_list' %}">Projects</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item {% ifequal request.path '/about' %} active {% endifequal %}">
+            <!-- <li class="nav-item"> -->
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
           <!-- <li class="nav-item">
@@ -128,8 +128,9 @@
       <h5 class="card-header">Free Game!</h5>
       <img class="card-img-top" src="https://imgur.com/NRDL9PY.jpg" alt="Card image cap">
       <div class="card-body">
-        Space Time is an experimental platformer video game where you control the hero through a series of levels, aiming to prevent the collapse of the space time continuum.
-        <div><a href="{% url 'project_list' %}" class="btn btn-primary">More info & Download</a></div>
+        Space Time is an experimental platformer video game where you control the hero through a series of levels,
+        aiming to prevent the collapse of the space time continuum.
+        <div><a href="{% url 'project_list' %}" class="btn btn-primary">More info</a></div>
       </div>
     </div>
 
