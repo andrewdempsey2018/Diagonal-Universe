@@ -21,12 +21,8 @@
             <hr>
 
             <!-- Date/Time -->
-            <p>{{ latestPost.date }}</p>
-
+            <p>Posted on {{ latestPost.date }} by Andrew. Category: <b>{{ latestPost.category }}</b></p>
             <hr>
-
-            <!-- Preview Image -->
-            <img class="img-fluid rounded" src="{{ latestPost.topImage }}" alt="">
 
             <!-- Post Content -->
             {% if latestPost.subtitle != "No subtitle" %}
@@ -35,47 +31,13 @@
             </div>
             {% endif %}
 
-            <p>{{ latestPost.text1 | linebreaks }}</p>
-
-            {% if latestPost.middleImage != "No image" %}
-            <img class="img-fluid rounded" src="{{ latestPost.middleImage }}" alt="">
-
-            <p class="text-muted">{{ latestPost.middleImageDescription }}</p>
-            {% endif %}
+            <p>{{ latestPost.text1|safe|linebreaks }}</p>
 
             {% if latestPost.text2 != "No text" %}
-            <p>{{ latestPost.text2 | linebreaks }}</p>
+            <p>{{ latestPost.text2|safe|linebreaks }}</p>
             {% endif %}
 
             <hr>
-
-            <div title="Addition images section">
-
-                <!-- <h3>Additional images</h3> -->
-
-                {% if latestPost.extraImage1 != "No image" %}
-                <img class="img-fluid rounded" src="{{ latestPost.extraImage1 }}"
-                    alt="{{ latestPost.extraImage1Description }}">
-                <p class="text-muted">{{ latestPost.extraImage1Description }}</p>
-                <hr>
-                {% endif %}
-
-                {% if latestPost.extraImage2 != "No image" %}
-                <img class="img-fluid rounded" src="{{ latestPost.extraImage2 }}"
-                    alt="{{ latestPost.extraImage2Description }}">
-                <p class="text-muted">{{ latestPost.extraImage2Description }}</p>
-
-                <hr>
-                {% endif %}
-
-                {% if latestPost.extraImage3 != "No image" %}
-                <img class="img-fluid rounded" src="{{ latestPost.extraImage3 }}"
-                    alt="{{ latestPost.extraImage3Description }}">
-                <p class="text-muted">{{ latestPost.extraImage3Description }}</p>
-
-                <hr>
-                {% endif %}
-            </div>
 
             {% if latestPost.video != 'No video for this post' %}
             <div title="Video section">
@@ -83,26 +45,6 @@
                 {% video latestPost.video 'small' %}
             </div>
             <hr>
-            {% endif %}
-
-            {% if latestPost.repo != 'No repo for this post' %}
-            <div title="Repo section">
-                <h3>Project repo</h3>
-                <a href="{{ latestPost.repo }}">View the GitHub repo for "{{ latestPost.title }}"</a>
-            </div>
-            <hr>
-            {% endif %}
-
-
-
-            {% if latestPost.references != 'No references' %}
-            <div class="references_section">
-                <h3>Further reading</h3>
-
-                <p>{{ latestPost.references | safe | linebreaks }}</p>
-
-
-            </div>
             {% endif %}
 
             {% endblock %}
