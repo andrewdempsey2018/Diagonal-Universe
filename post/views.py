@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 
 from .models import Post
+from .forms import PostForm
 from Comment.models import Comment
 from Comment.forms import CommentForm
 
@@ -75,3 +76,13 @@ def old_post(request, slug):
         return render(request, 'post/thanks.html')  
     else:
         return render(request, "post/index.html", {'latestPost': latestPost, 'categorys': categorys, 'comments': comments, 'form': form})
+
+def new_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/")
+    else:
+        form = PostForm()
+    return render(request, "post/new_post.html", {'form': form})
