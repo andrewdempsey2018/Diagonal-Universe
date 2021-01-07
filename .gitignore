@@ -6,3 +6,4 @@ venv/
 env/
 ignore/
 env.py
+posts_backup/
