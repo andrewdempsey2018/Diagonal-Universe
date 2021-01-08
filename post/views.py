@@ -12,6 +12,10 @@ def view_post(request, slug=None):
     else:
         post = Post.objects.get(slug=slug)
 
+    print("*** post slug")
+    print(post.slug)
+    print("***")
+
     # >>
     categorys = Post.CATEGORYS
     new = list(categorys)
@@ -28,14 +32,14 @@ def view_post(request, slug=None):
         comment = Comment()
         comment.name = request.POST.get('name')
         comment.text = request.POST.get('text')
-        print("***")
-        print(post.slug)
-        print("***")
         comment.subject = post.slug
+        print("*** subject")
+        print(comment.subject)
+        print("***")
         comment.save()
         return render(request, 'post/thanks.html')
-    else:
-        return render(request, "post/view_post.html", {'post': post, 'categorys': categorys, 'comments': comments, 'form': form})
+    
+    return render(request, "post/view_post.html", {'post': post, 'categorys': categorys, 'comments': comments, 'form': form})
 
 def thanks(request):
     return render(request, "post/thanks.html")
