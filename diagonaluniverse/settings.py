@@ -16,7 +16,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'sa89das7d8a')
 #The value of the DEBUG will be True by default, but will only be False
 #if the value of the DJANGO_DEBUG environment variable is set to False.
 #DEBUG = os.environ.get('DEBUG', '') != 'False'
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.diagonaluniverse.com','http://www.diagonaluniverse.com', 'diagonaluniverse.herokuapp.com', 'localhost']
 

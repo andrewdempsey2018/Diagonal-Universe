@@ -6,61 +6,36 @@ from .forms import PostForm
 from Comment.models import Comment
 from Comment.forms import CommentForm
 
-def index(request):
-    post = Post.objects.latest('id')
-    categorys = Post.CATEGORYS
+def view_post(request, slug=None):
+    if slug is None:
+        post = Post.objects.latest('id')
+    else:
+        post = Post.objects.get(slug=slug)
 
-    #remove 'projects' from categorys as we dont want this listed on main page
+    # >>
+    categorys = Post.CATEGORYS
     new = list(categorys)
     new.remove(('Projects', 'Projects'))
-    #print("!")
     categorys = tuple(new)
-    #print(new)
+    # <<
     
-    #get comments unique to the latest post
+    # Get comments unique to the displayed post
     comments = Comment.objects.all().filter(subject=post.slug)
 
     form = CommentForm()
 
     if request.method == 'POST':
-        #if form.is_valid():
         comment = Comment()
         comment.name = request.POST.get('name')
         comment.text = request.POST.get('text')
+        print("***")
+        print(post.slug)
+        print("***")
         comment.subject = post.slug
         comment.save()
-        return render(request, 'post/thanks.html')  
+        return render(request, 'post/thanks.html')
     else:
-        return render(request, "post/index.html", {'post': post, 'categorys': categorys, 'comments': comments, 'form': form})
-
-def old_post(request, slug):
-    #messy code here (entire view should be refactored)
-    #old_post view and index view should be the same function
-    post = Post.objects.get(slug=slug)
-    categorys = Post.CATEGORYS
-
-    #remove 'projects' from categorys as we dont want this listed on main page
-    new = list(categorys)
-    new.remove(('Projects', 'Projects'))
-    print("!")
-    categorys = tuple(new)
-    print(new)
-    
-    #get comments unique to the latest post
-    comments = Comment.objects.all().filter(subject=post.slug)
-
-    form = CommentForm()
-
-    if request.method == 'POST':
-        #if form.is_valid():
-        comment = Comment()
-        comment.name = request.POST.get('name')
-        comment.text = request.POST.get('text')
-        comment.subject = post.slug
-        comment.save()
-        return render(request, 'post/thanks.html')  
-    else:
-        return render(request, "post/index.html", {'post': post, 'categorys': categorys, 'comments': comments, 'form': form})
+        return render(request, "post/view_post.html", {'post': post, 'categorys': categorys, 'comments': comments, 'form': form})
 
 def thanks(request):
     return render(request, "post/thanks.html")

@@ -19,7 +19,7 @@
         <div class="col-md-5">
             <h3>{{ post.title }}</h3>
             <p>{{ post.subtitle }}</p>
-            <a class="btn btn-primary" href="{% url 'old_post' slug=post.slug %}">Read</a>
+            <a class="btn btn-primary" href="{% url 'view_post' slug=post.slug %}">Read</a>
         </div>
     </div>
     <!-- /.row -->

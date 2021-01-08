@@ -16,35 +16,35 @@
         <div class="col-lg-8">
 
             <!-- Title -->
-            <h1 class="mt-4">{{ latestPost.title }}</h1>
+            <h1 class="mt-4">{{ post.title }}</h1>
 
             <hr>
 
             <!-- Date/Time -->
-            <p>Posted on {{ latestPost.date }} by Andrew. Category: <b>{{ latestPost.category }}</b></p>
+            <p>Posted on {{ post.date }} by Andrew. Category: <b>{{ post.category }}</b></p>
             <hr>
 
-            <img class="img-fluid rounded" src="{{ latestPost.topImage }}" alt="">
+            <img class="img-fluid rounded" src="{{ post.topImage }}" alt="">
 
             <!-- Post Content -->
-            {% if latestPost.subtitle != "No subtitle" %}
+            {% if post.subtitle != "No subtitle" %}
             <div class="subtitle">
-                <p class="lead">{{ latestPost.subtitle }}</p>
+                <p class="lead">{{ post.subtitle }}</p>
             </div>
             {% endif %}
 
-            <p>{{ latestPost.text1|safe|linebreaks }}</p>
+            <p>{{ post.text1|safe|linebreaks }}</p>
 
-            {% if latestPost.text2 != "No text" %}
-            <p>{{ latestPost.text2|safe|linebreaks }}</p>
+            {% if post.text2 != "No text" %}
+            <p>{{ post.text2|safe|linebreaks }}</p>
             {% endif %}
 
             <hr>
 
-            {% if latestPost.video != 'No video for this post' %}
+            {% if post.video != 'No video for this post' %}
             <div title="Video section">
                 <h3>Video demonstration</h3>
-                {% video latestPost.video 'small' %}
+                {% video post.video 'small' %}
             </div>
             <hr>
             {% endif %}
@@ -56,12 +56,13 @@
             <div class="card my-4">
                 <h5 class="card-header">Leave a Comment:</h5>
                 <div class="card-body">
-                    <form action="" method="POST">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            {{form|bootstrap}}
-                        </div>
-                        <button type="submit" class="btn btn-primary" value="Comment">Submit</button>
+                    <!-- <form action="{% url 'view_post' %}" method="POST"> -->
+                    <form action="{% url 'view_post' slug=post.slug %}" method="POST"></form>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form | bootstrap }}
+                    </div>
+                    <button type="submit" class="btn btn-primary" value="Comment">Submit</button>
                     </form>
                 </div>
             </div>
