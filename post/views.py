@@ -13,9 +13,9 @@ def index(request):
     #remove 'projects' from categorys as we dont want this listed on main page
     new = list(categorys)
     new.remove(('Projects', 'Projects'))
-    print("!")
+    #print("!")
     categorys = tuple(new)
-    print(new)
+    #print(new)
     
     #get comments unique to the latest post
     comments = Comment.objects.all().filter(subject=latestPost.slug)

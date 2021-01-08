@@ -24,6 +24,8 @@
             <p>Posted on {{ latestPost.date }} by Andrew. Category: <b>{{ latestPost.category }}</b></p>
             <hr>
 
+            <img class="img-fluid rounded" src="{{ latestPost.topImage }}" alt="">
+
             <!-- Post Content -->
             {% if latestPost.subtitle != "No subtitle" %}
             <div class="subtitle">

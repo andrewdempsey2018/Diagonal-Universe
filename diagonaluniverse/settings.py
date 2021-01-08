@@ -15,7 +15,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'sa89das7d8a')
 
 #The value of the DEBUG will be True by default, but will only be False
 #if the value of the DJANGO_DEBUG environment variable is set to False.
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+#DEBUG = os.environ.get('DEBUG', '') != 'False'
+DEBUG = False
 
 ALLOWED_HOSTS = ['www.diagonaluniverse.com','http://www.diagonaluniverse.com', 'diagonaluniverse.herokuapp.com', 'localhost']
 
@@ -112,11 +113,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Additional static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "staticfiles"),
 ]
 
 # Heroku: Update database configuration from $DATABASE_URL.

@@ -5,5 +5,5 @@ __pycache__
 venv/
 env/
 ignore/
-env.py
 posts_backup/
+.sqlite3
