@@ -55,7 +55,7 @@ def post_list(request, cat):
     
     return render(request, "post/post_list.html", {'postList': postList, 'title': title})
 
-@login_required(login_url='/admin/')
+@login_required(login_url='/accounts/login')
 def new_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
