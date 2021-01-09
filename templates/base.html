@@ -27,9 +27,6 @@
   {% block post %}
   {% endblock %}
 
-  {% block project_list %}
-  {% endblock %}
-
   {% block post_list %}
   {% endblock %}
 
@@ -55,8 +52,8 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item {% ifequal request.path '/project_list/' %} active {% endifequal %}">
-            <a class="nav-link" href="{% url 'project_list' %}">Projects</a>
+          <li class="nav-item {% ifequal request.path '/post_list/' %} active {% endifequal %}">
+            <a class="nav-link" href="{% url 'post_list' cat='Projects' %}">Projects</a>
           </li>
           <li class="nav-item {% ifequal request.path '/about' %} active {% endifequal %}">
             <!-- <li class="nav-item"> -->
@@ -120,7 +117,7 @@
       <div class="card-body">
         Check out the source and other information
         <div>
-          <a href="{% url 'project_list' %}" class="btn btn-primary">More info</a></div>
+          <a href="{% url 'post_list' cat='Projects' %}" class="btn btn-primary">More info</a></div>
       </div>
     </div>
 
@@ -130,7 +127,7 @@
       <div class="card-body">
         Space Time is an experimental platformer video game where you control the hero through a series of levels,
         aiming to prevent the collapse of the space time continuum.
-        <div><a href="{% url 'project_list' %}" class="btn btn-primary">More info</a></div>
+        <div><a href="{% url 'post_list' cat='Projects' %}" class="btn btn-primary">More info</a></div>
       </div>
     </div>
 

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 from .models import Post
 from .forms import PostForm
@@ -12,20 +13,13 @@ def view_post(request, slug=None):
     else:
         post = Post.objects.get(slug=slug)
 
-    print("*** post slug")
-    print(post.slug)
-    print("***")
-
-    # >>
+    # Grab a list of ppost categorys for display in the side panel
     categorys = Post.CATEGORYS
-    new = list(categorys)
-    new.remove(('Projects', 'Projects'))
-    categorys = tuple(new)
-    # <<
     
     # Get comments unique to the displayed post
     comments = Comment.objects.all().filter(subject=post.slug)
 
+    # Generate a form for user comments
     form = CommentForm()
 
     if request.method == 'POST':
@@ -33,9 +27,6 @@ def view_post(request, slug=None):
         comment.name = request.POST.get('name')
         comment.text = request.POST.get('text')
         comment.subject = post.slug
-        print("*** subject")
-        print(comment.subject)
-        print("***")
         comment.save()
         return render(request, 'post/thanks.html')
     
@@ -45,13 +36,16 @@ def thanks(request):
     return render(request, "post/thanks.html")
 
 def post_list(request, cat):
+
+    if cat == 'Projects':
+        title = "Projectiles yes!!"
+    else:
+        title = "Listing posts in the category: " + cat
+
     postList = Post.objects.filter(category = cat)
-    return render(request, "post/post_list.html", {'postList': postList})
+    return render(request, "post/post_list.html", {'postList': postList, 'title': title})
 
-def project_list(request):
-    postList = Post.objects.filter(category = 'Projects')
-    return render(request, "post/post_list.html", {'postList': postList})
-
+@login_required(login_url='/admin/')
 def new_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
