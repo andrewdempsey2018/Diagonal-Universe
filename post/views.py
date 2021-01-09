@@ -37,12 +37,22 @@ def thanks(request):
 
 def post_list(request, cat):
 
+    # Generate a heading for the list
     if cat == 'Projects':
-        title = "Projectiles yes!!"
+        title = "Some of the projects I have worked on..."
     else:
         title = "Listing posts in the category: " + cat
 
-    postList = Post.objects.filter(category = cat)
+    # Generate the list of posts based on user selection
+    if cat == 'all_new_to_old':
+        postList = Post.objects.all().order_by('-date')
+        title = "All posts, newest first..."
+    elif cat == 'all_old_to_new':
+        postList = Post.objects.all().order_by('date')
+        title = "All posts, oldest first..."
+    else:
+        postList = Post.objects.filter(category = cat)
+    
     return render(request, "post/post_list.html", {'postList': postList, 'title': title})
 
 @login_required(login_url='/admin/')

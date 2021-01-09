@@ -81,25 +81,28 @@
     <!-- Categories Widget -->
     <div class="card my-4">
       <h5 class="card-header">Find a blog post by category</h5>
-      <!-- <h5 class="card-header">Find a blog post by category or date</h5> -->
       <div class="card-body">
         <div class="row">
-          <!-- iterate over the categorys, put the odd numberd ones
-            into the left column and the evens to the right -->
+
+          <!-- iterate over the categorys, put the odd numberd ones into the left 
+            column and the evens to the right -->
+
           <div class="col-lg-6">
+            <!-- left column -->
             <ul class="list-unstyled mb-0">
-              <!-- <li><a href="#">New-Old</a></li> -->
+              <li><a href="{% url 'post_list' cat='all_new_to_old' %}">All (new-old)</a></li>
               {% for i, category in categorys %}
               <p>{% if not forloop.counter|divisibleby:2 %}</p>
               <li><a href="{% url 'post_list' cat=category %}">{{ category }}</a></li>
-              <!-- <li><a href="#">{{ category }}</a></li> -->
               {% endif %}
               {% endfor %}
             </ul>
           </div>
+
           <div class="col-lg-6">
+            <!-- right column -->
             <ul class="list-unstyled mb-0">
-              <!-- <li><a href="#">Old-New</a></li> -->
+              <li><a href="{% url 'post_list' cat='all_old_to_new' %}">All (old-new)</a></li>
               {% for i, category in categorys %}
               <p>{% if forloop.counter|divisibleby:2 %}</p>
               <li><a href="{% url 'post_list' cat=category %}">{{ category }}</a></li>
@@ -107,6 +110,7 @@
               {% endfor %}
             </ul>
           </div>
+
         </div>
       </div>
     </div>
