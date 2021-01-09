@@ -26,3 +26,18 @@ pre {
     font-family: monospace;
     background-color: lightgrey
 }
+
+.flibby:active {
+    font-family: 'Russo One', sans-serif;
+    margin-left: 20px;
+    font-style: italic;
+    text-decoration: none;
+}
+
+/* 'back to top' link on footer */
+a:link {
+    background-color: transparent;
+    font-family: 'Russo One', sans-serif;
+    font-style: italic;
+    text-decoration: none;
+}
