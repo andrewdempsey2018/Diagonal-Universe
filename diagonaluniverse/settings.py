@@ -1,25 +1,12 @@
 import os
-import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-
-#use SECRET_KEY from heroku. If no SECRET_KEY is found, then the app is running on a development
-#enviornment so the second srgument is used instead. The second argument is a dummy secret key
-SECRET_KEY = os.environ.get('SECRET_KEY', 'sa89das7d8a')
-
-#The value of the DEBUG will be True by default, but will only be False
-#if the value of the DJANGO_DEBUG environment variable is set to False.
-#DEBUG = os.environ.get('DEBUG', '') != 'False'
-DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY', 'randomfakekey123')
+DEBUG = os.environ.get('DEBUG', True)
 
 ALLOWED_HOSTS = ['www.diagonaluniverse.com','http://www.diagonaluniverse.com', 'diagonaluniverse.herokuapp.com', 'localhost']
-
 
 # Application definition
 
@@ -113,7 +100,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = '/static/'
 
 # Additional static files
 STATICFILES_DIRS = [
