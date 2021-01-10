@@ -3,8 +3,10 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ.get('SECRET_KEY', 'randomfakekey123')
-DEBUG = os.environ.get('DEBUG', True)
+SECRET_KEY = os.environ.get('SECRET_KEY', 'fake_development_key_123')
+DEBUG = os.environ.get('DEBUG', False)
+
+print("Hello", os.environ.get('SECRET_KEY'))
 
 ALLOWED_HOSTS = ['www.diagonaluniverse.com','http://www.diagonaluniverse.com', 'diagonaluniverse.herokuapp.com', 'localhost']
 
