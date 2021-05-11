@@ -55,13 +55,12 @@
           <li class="nav-item {% ifequal request.path '/post_list/Projects/' %} active {% endifequal %}">
             <a class="nav-link" href="{% url 'post_list' cat='Projects' %}">Projects</a>
           </li>
+          <li class="nav-item {% ifequal request.path '/contact' %} active {% endifequal %}">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
           <li class="nav-item {% ifequal request.path '/about' %} active {% endifequal %}">
-            <!-- <li class="nav-item"> -->
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-          </li> -->
         </ul>
       </div>
     </div>
@@ -121,7 +120,8 @@
       <div class="card-body">
         Check out the source and other information
         <div>
-          <a href="http://www.diagonaluniverse.com/view_post/computer-controlled-plane/" class="btn btn-primary">More info</a></div>
+          <a href="http://www.diagonaluniverse.com/view_post/computer-controlled-plane/" class="btn btn-primary">More
+            info</a></div>
       </div>
     </div>
 
@@ -131,7 +131,8 @@
       <div class="card-body">
         Space Time is an experimental platformer video game where you control the hero through a series of levels,
         aiming to prevent the collapse of the space time continuum.
-        <div><a href="http://www.diagonaluniverse.com/view_post/space-time-game/" class="btn btn-primary">More info</a></div>
+        <div><a href="http://www.diagonaluniverse.com/view_post/space-time-game/" class="btn btn-primary">More info</a>
+        </div>
       </div>
     </div>
 
