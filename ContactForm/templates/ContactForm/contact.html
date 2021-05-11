@@ -3,8 +3,6 @@
 {% block sidebar %}
 {% endblock %}
 
-{% load crispy_forms_tags %}
-
 {% block contact_content %}
 <!-- Page Content -->
 <div class="container">
@@ -22,7 +20,7 @@
         <div class="col-md-8">
             <form action="/contact/" method="POST">
                 {% csrf_token %}
-                {{ form|crispy }}
+                {{ form.as_p}}
                 <input type="submit" value="Submit">
             </form>
         </div>

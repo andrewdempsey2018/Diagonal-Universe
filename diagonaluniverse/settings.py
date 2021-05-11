@@ -25,7 +25,6 @@ INSTALLED_APPS = [
     #bootstrapform helps with rendering forms
     'bootstrapform',
     'embed_video',
-    'crispy_forms',
 ]
 
 MIDDLEWARE = [
