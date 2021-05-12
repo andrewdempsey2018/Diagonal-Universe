@@ -13,11 +13,14 @@
     </div>
 
     <div class="row">
-        <p>Feel free to contact me, I'll be sure to get back to you</p>
+        <div class="col-md-8">
+            <p>You can contact me by filling out the form below. I'll get back to you about any questions you might have
+                & I appreciate your comments</p>
+        </div>
     </div>
 
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 contactForm">
             <form action="/contact/" method="POST">
                 {% csrf_token %}
                 {{ form.as_p}}
@@ -25,6 +28,18 @@
             </form>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <p>See my Facebook page</p>
+            <a href="https://www.facebook.com/andrew.dempsey.37" class="fa fa-facebook"></a>
+        </div>
+        <div class="col-md-8">
+            <p>See my Facebook page</p>
+            <a href="https://www.linkedin.com/in/andrew-dempsey-20ab40180/" class="fa fa-linkedin"></a>
+        </div>
+    </div>
+</div>
 
 </div>
 <!-- /.container -->
