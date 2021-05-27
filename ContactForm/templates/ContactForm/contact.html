@@ -3,44 +3,31 @@
 {% block sidebar %}
 {% endblock %}
 
+<!-- use bootstrapform for rendering the comment form -->
+{% load bootstrap %}
+
 {% block contact_content %}
-<!-- Page Content -->
-<div class="container">
 
-    <!-- Portfolio Item Heading -->
-    <div class="row">
-        <h1 class="my-4">Contact me</h1>
-    </div>
 
-    <div class="row">
-        <div class="col-md-8">
-            <p>You can contact me by filling out the form below. I'll get back to you about any questions you might have
-                & I appreciate your comments</p>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-8 contactForm">
-            <form action="/contact/" method="POST">
-                {% csrf_token %}
-                {{ form.as_p}}
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </div>
+<div class="form-group contact_page">
+    <h1 class="my-4">Contact me</h1>
+    <p>You can contact me by filling out the form below.</p>
 
-    <div class="row">
-        <div class="col-md-8">
-            <p>See my Facebook page</p>
-            <a href="https://www.facebook.com/andrew.dempsey.37" class="fa fa-facebook"></a>
-        </div>
-        <div class="col-md-8">
-            <p>See my Facebook page</p>
-            <a href="https://www.linkedin.com/in/andrew-dempsey-20ab40180/" class="fa fa-linkedin"></a>
-        </div>
-    </div>
+    <p>I'll get back to you about any questions you might have
+        & I appreciate your comments</p>
+
+    <form action="/contact/" method="POST">
+        {% csrf_token %}
+        {{ form | bootstrap}}
+        <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+    </form>
 </div>
 
+<div class="social_media contact_page">
+    My social media links
+    <a href="https://www.facebook.com/andrew.dempsey.37" target="_blank" class="fa fa-facebook"></a>
+    <a href="https://www.linkedin.com/in/andrew-dempsey-20ab40180/" target="_blank" class="fa fa-linkedin"></a>
 </div>
-<!-- /.container -->
+
 {% endblock %}

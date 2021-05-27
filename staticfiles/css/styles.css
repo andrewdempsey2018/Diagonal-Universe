@@ -42,8 +42,6 @@ pre {
     padding-right: 40%;
 }
 
-/* */
-
 .fa {
     padding: 20px;
     font-size: 40px;
@@ -64,4 +62,14 @@ pre {
 .fa-linkedin {
     background: #007bb5;
     color: white;
+}
+
+.social_media {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.contact_page {
+    padding-left: 20%;
+    padding-right: 20%;
 }
